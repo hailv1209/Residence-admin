@@ -41,8 +41,8 @@ class Navbar extends Component {
     return (
       <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <Link className="navbar-brand brand-logo" to="/"><img src={require('../../assets/images/logo.svg')} alt="logo" /></Link>
-          <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logo-mini.svg')} alt="logo" /></Link>
+          <Link className="navbar-brand brand-logo flex-container" to="/"><img src={require('../../assets/images/logo.jpg')} alt="logo" /><span>Demeter</span></Link>
+          <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logo.jpg')} alt="logo" /></Link>
         </div>
         <div className="navbar-menu-wrapper d-flex align-items-stretch">
           <button className="navbar-toggler navbar-toggler align-self-center" type="button" onClick={ () => document.body.classList.toggle('sidebar-icon-only') }>
@@ -54,7 +54,7 @@ class Navbar extends Component {
               <Dropdown alignRight>
                 <Dropdown.Toggle className="nav-link">
                   <div className="nav-profile-img">
-                    <img src={require("../../assets/images/faces/face1.jpg")} alt="user"/>
+                    <img src={require("../../assets/images/faces/face2.jpg")} alt="user"/>
                     <span className="availability-status online"></span>
                   </div>
                   <div className="nav-profile-text">

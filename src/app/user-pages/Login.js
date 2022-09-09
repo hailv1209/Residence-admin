@@ -56,11 +56,8 @@ export class Login extends Component {
             <div className="col-lg-4 mx-auto">
               <div className="auth-form-light text-left py-5 px-4 px-sm-5  position-relative">
                 {this.state.loading && <Spinner></Spinner>}
-                <div className="brand-logo">
-                  <img
-                    src={require("../../assets/images/logo.svg")}
-                    alt="logo"
-                  />
+                <div className="brand-logo d-flex align-items-center ">
+                <img src={require('../../assets/images/logo.jpg')} alt="logo" /><span>Demeter</span>
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 className="font-weight-light">Sign in to continue.</h6>

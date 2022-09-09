@@ -212,7 +212,7 @@ export class Dashboard extends Component {
                         <tr key={item.id}>
                           <td>
                             <img
-                              src={require("../../assets/images/faces/face1.jpg")}
+                              src={require("../../assets/images/faces/face2.jpg")}
                               className="mr-2"
                               alt="face"
                             />{" "}
@@ -289,7 +289,7 @@ export class Dashboard extends Component {
                         <tr key={item.id}>
                           <td>
                             <img
-                              src={require("../../assets/images/faces/face1.jpg")}
+                              src={require("../../assets/images/faces/face2.jpg")}
                               className="mr-2"
                               alt="face"
                             />{" "}

@@ -28,7 +28,7 @@ class Sidebar extends Component {
             >
               <div className="nav-profile-image">
                 <img
-                  src={require("../../assets/images/faces/face1.jpg")}
+                  src={require("../../assets/images/faces/face2.jpg")}
                   alt="profile"
                 />
                 <span className="login-status online"></span>{" "}

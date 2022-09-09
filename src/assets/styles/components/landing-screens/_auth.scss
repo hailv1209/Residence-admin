@@ -47,9 +47,19 @@
 	}
 	.brand-logo {
 		margin-bottom: 2rem;
+		width: 150px;
 		img {
-			width: 150px;
+			width: 28px;
+			max-width: 100%;
+			height: 28px;
+			margin: auto;
+			vertical-align: middle;
 		}
+		span {
+			color: #b66dff;
+			font-weight: bold;
+			font-size: 25px;
+		  }
 	}
 	form {
 		.form-group {
