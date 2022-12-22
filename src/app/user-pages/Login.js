@@ -17,12 +17,12 @@ export class Login extends Component {
   }
   onSubmit(value) {
     const body = { ...value };
-    const url = `https://best-web-design-api.herokuapp.com/Account/login`;
+    const url = `https://localhost:7180/api/AdminAccount/login`;
     this.setState({loading: true});
     axios.post(url, body).then((res) => {
       this.setState({loading: false});
       const user = res.data;
-      localStorage.setItem("demeter_user_data", JSON.stringify(user));
+      localStorage.setItem("Reveal_user_data", JSON.stringify(user));
       toast.success("Login success!", {
         position: "bottom-right",
         autoClose: 1000,

@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 class App extends Component {
   state = {}
   componentDidMount() {
-    const userJson = localStorage.getItem("demeter_user_data");
+    const userJson = localStorage.getItem("Reveal_user_data");
     if (!userJson) {
       this.props.history.push("login");
       return;
