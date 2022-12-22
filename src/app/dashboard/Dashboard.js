@@ -212,7 +212,7 @@ export class Dashboard extends Component {
 
   nextUser() {
     const { pageNumber } = this.state.userState;
-    if (this.runOutOfDeleteTempResidence()) return;
+    if (this.runOutOfUser()) return;
     this.setState(
       {
         userState: {
@@ -226,7 +226,7 @@ export class Dashboard extends Component {
 
   previousUser() {
     const { pageNumber } = this.state.userState;
-    if (this.onPageOneDeleteTempResidence()) return;
+    if (this.onPageOneUser()) return;
     this.setState(
       {
         userState: {
@@ -310,7 +310,7 @@ export class Dashboard extends Component {
     }
 
     ConfirmDeleteTempResidence (idHoSoDangKiTamTru,idHoSoXoaGiaHan) {
-      const url = "https://localhost:7180/api/TempResidenceDelete/admin/delete";
+      const url = `https://localhost:7180/api/TempResidenceDelete/admin/delete?idHoSoDangKiTamTru=${idHoSoDangKiTamTru}&idHoSoXoaGiaHan=${idHoSoXoaGiaHan}`;
       const user = JSON.parse(localStorage.getItem("Reveal_user_data"));
       axios.defaults.headers.common["Authorization"] = user
         ? `Bearer ${user.token}`
@@ -321,16 +321,12 @@ export class Dashboard extends Component {
             loading: true,
           },
         });
-        axios.delete(url, {
-          
-              "idHoSoDangKiTamTru": idHoSoDangKiTamTru,
-              "idHoSoXoaGiaHan": idHoSoXoaGiaHan        
-          
-        },{ headers: {
+        axios.delete(url,{ headers: {
           'Content-Type': 'application/json'
         }})
         .then((res) => {
           this.getDeleteTempResidence();
+          this.getTempResidence();
           toast.success("Xóa Hồ sơ thành công !", {
             position: "bottom-right",
             autoClose: 1000,
@@ -382,7 +378,7 @@ export class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="dashboard-container">
         <div className="page-header">
           <h3 className="page-title">
             <span className="page-title-icon bg-gradient-primary text-white mr-2">
@@ -491,7 +487,6 @@ export class Dashboard extends Component {
                         <th> Thành Phố </th>
                         <th> Quận </th>
                         <th> Phường </th>
-                        <th> Địa Chỉ </th>
                         <th> Họ Tên Chủ Hộ </th>
                         <th> Quan Hệ Với Chủ Hộ </th>
                         <th> CMND Chủ Hộ </th>
@@ -514,7 +509,6 @@ export class Dashboard extends Component {
                           <td> {item.thanhPho} </td>
                           <td> {item.quan} </td>
                           <td> {item.phuong} </td>
-                          <td> {item.diaChi} </td>
                           <td> {item.hoTenChuHo} </td>
                           <td> {item.quanHeVoiChuHo} </td>
                           <td> {item.cmndChuHo} </td>

@@ -80,7 +80,7 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    const user = JSON.parse(localStorage.getItem("demeter_user_data"));
+    const user = JSON.parse(localStorage.getItem("Reveal_user_data"));
     user &&
       this.setState({
         user: { displayName: user.displayName, role: user.role },
